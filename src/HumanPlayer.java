@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class HumanPlayer extends Player {
+    public HumanPlayer(String name) {
+        super(name);
+    }
+
+    @Override
+    public Card playCard(Card topCard) {
+        Scanner input = new Scanner(System.in);
+        showHand();
+
+        System.out.println("The card on top of the deck is: " + topCard);
+        System.out.println("Enter the index number of the Card you would like to play: ");
+        int cardIndex = input.nextInt();
+
+        Card cardToPlay = hand.get(cardIndex);
+        hand.remove(cardIndex);
+        return cardToPlay;
+    }
+
+}
