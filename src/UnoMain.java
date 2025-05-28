@@ -12,6 +12,7 @@ public class UnoMain {
         discardPile.add(deck.remove(0)); //starting discard Pile by moving the first card of the deck to it
         Card topCard = discardPile.get(discardPile.size() - 1);
 
+        while(true){
         for (Player player : players) {
             System.out.println("\n" + player.getName() + "'s turn:");
             Card playedCard = player.playCard(topCard);
@@ -19,7 +20,7 @@ public class UnoMain {
             topCard = playedCard;
             System.out.println(player.getName() + " played: " + playedCard);
         }
-
+        }
 
     }
 
