@@ -14,6 +14,11 @@ public class HumanPlayer extends Player {
         System.out.println("Enter the index number of the Card you would like to play: ");
         int cardIndex = input.nextInt();
 
+        if (cardIndex < 0 || cardIndex > hand.size()-1) { //if input out of bounds run playCard again
+            System.out.println("Invalid index. Try again.");
+            return playCard(topCard);
+        }
+
         Card cardToPlay = hand.get(cardIndex);
         hand.remove(cardIndex);
         return cardToPlay;
